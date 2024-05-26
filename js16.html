@@ -1,0 +1,31 @@
+<!-- Завдання 2 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Пошук значення в масиві</title>
+</head>
+<body>
+  <input type="text" id="searchInput" placeholder="Введіть значення для пошуку">
+  <button onclick="searchValue()">Знайти
+  </button>
+  <p id="result"></p>
+
+  <script>
+    const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+    function searchValue() {
+      const searchInput = document.getElementById('searchInput').value.toLowerCase();
+      const index = alphabet.indexOf(searchInput);
+      const resultElement = document.getElementById('result');
+
+      if (index !== -1) {
+        resultElement.textContent = `Iндекс значення '${searchInput}' у масиві алфавіту: ${index}`;
+      } else {
+        resultElement.textContent = `Значення '${searchInput}' не знайдено в масиві алфавіту.`;
+      }
+    }
+  </script>
+</body>
+</html>

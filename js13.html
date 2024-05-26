@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Аналіз числа</h1>
+    <p>Кількість цифр у числі: <span id="digitsCount"></span></p>
+    <p>Цифри числа: <span id="digitsArray"></span></p>
+    <p>Сума цифр у числі: <span id="sumOfDigits"></span></p>
+    <p>Кількість парних цифр: <span id="evenCount"></span></p>
+    <p>Кількість непарних цифр: <span id="oddCount"></span></p>
+    <p id="errorMessage"></p>
+
+    <script>
+        function analyzeNumber() {
+            let inputNumber = prompt("Введіть ціле число:");
+            
+            if (!isNaN(inputNumber) && inputNumber.trim() !== "") {
+                let digitsCount = inputNumber.length;
+                let digitsArray = inputNumber.split("");
+                
+                document.getElementById('digitsCount').textContent = digitsCount;
+                document.getElementById('digitsArray').textContent = digitsArray.join(" ");
+                
+                let sumOfDigits = digitsArray.reduce((acc, curr) => acc + parseInt(curr), 0);
+                document.getElementById('sumOfDigits').textContent = sumOfDigits;
+                
+                let evenCount = 0;
+                let oddCount = 0;
+                digitsArray.forEach(digit => {
+                    if (parseInt(digit) % 2 === 0) {
+                        evenCount++;
+                    } else {
+                        oddCount++;
+                    }
+                });
+                document.getElementById('evenCount').textContent = evenCount;
+                document.getElementById('oddCount').textContent = oddCount;
+            } else {
+                document.getElementById('errorMessage').textContent = "Введено не число. Будь ласка, спробуйте ще раз.";
+            }
+        }
+        
+        analyzeNumber();
+        
+    </script>
+</body>
+</html>

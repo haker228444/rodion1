@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вхід</title>
+</head>
+<body>
+  <script>
+    function login() {
+      let login = prompt("Введіть ваш логін: ");
+
+      if (login === "User") {
+        password();
+      } else if (login === "cancel") {
+        alert("Вхід скасований");
+        return;
+      } else {
+        alert("Користувач невизначений");
+        return;
+      }
+    }
+
+    function password() {
+      let password = prompt("Введіть ваш пароль: ");
+
+      if (password === "cancel") {
+        alert("Вхід скасований");
+        return;
+      } else if (password === "password") {
+        alert("Ласкаво просимо!");
+      } else {
+        alert("Пароль невірний!");
+      }
+    }
+
+    login();
+  </script>
+</body>
+</html>
