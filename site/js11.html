@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Витягнуті числа:</h1>
+    <p>Витягнуто перше число: <span id="num1"></span></p>
+    <p>Другий витягнутий номер: <span id="num2"></span></p>
+    <p>Витягнуто третє число: <span id="num3"></span></p>
+    <p>Витягнуто четверте число: <span id="num4"></span></p>
+    <p>П'яте число: <span id="num5"></span></p>
+
+    <script>
+        let randomNum1 = Math.floor(Math.random() * (99 - 10 + 1)) + 10;
+        let randomNum2 = Math.floor(Math.random() * (99 - 10 + 1)) + 10;
+        let randomNum3 = Math.floor(Math.random() * (99 - 10 + 1)) + 10;
+        let randomNum4 = Math.floor(Math.random() * (99 - 10 + 1)) + 10;
+        let randomNum5 = Math.floor(Math.random() * (99 - 10 + 1)) + 10;
+
+        document.getElementById('num1').textContent = randomNum1;
+        document.getElementById('num2').textContent = randomNum2;
+        document.getElementById('num3').textContent = randomNum3;
+        document.getElementById('num4').textContent = randomNum4;
+        document.getElementById('num5').textContent = randomNum5;
+    </script>
+</body>
+</html>
